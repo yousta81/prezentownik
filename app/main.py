@@ -9,6 +9,8 @@ from app.database import Base, engine, SessionLocal
 from app.models import User, Gift, Reservation, Friendship
 from app.auth import verify_password, SECRET_KEY, ALGORITHM
 from jose import JWTError, jwt
+import os
+from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
@@ -24,12 +26,12 @@ def get_db():
     finally:
         db.close()
 
-# 🔹 Obsługa plików statycznych
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# obliczamy ścieżkę do folderu static w pakiecie app
+static_path = os.path.join(os.path.dirname(__file__), "static")
+app.mount("/static", StaticFiles(directory=static_path), name="static")
 
 # 🔹 Szablony Jinja2
-templates = Jinja2Templates(directory="templates")
-
+templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
 
 
 @app.get("/login")
