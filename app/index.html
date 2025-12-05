@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prezentownik</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="icon" href="./static//favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+        <div id="header">
+        <header class="max_width">
+            <img src="./static/logo.png" alt="Prezentownik Logo" id="logo"/>
+            <h1>Witaj w prezentowniku Username!</h1>
+            <p>Zbliżają się Święta albo inne wydarzenia i trzeba ogarnąć listę prezentów? Nie ma sprawy :-)</p>
+        </header>
+        </div>
+        <div id="main" class="max_width">
+        <section class="card__wrapper" id="reserved_presents_section">
+            <div id="sentinel"></div>
+            <div class="card__block_title sticky_top box" id="watched"><h2>Prezenty zarezerwowane przez Ciebie <span id="items_counter"></span></h2></div>
+           <article class="card" id="present555" data-user="Ewelina">     
+                <div class="card__inner" > 
+                <div class="top_right free_flag">Ewelina</div>           
+                
+                    <div class="card__content">
+                        <a href="generic.html">
+                            
+                    <img src="https://duka.com/media/catalog/product/cache/2c16f41d619cf7edd8ee8025382f8e1f/D/U/DUKA-1217354-kubek.webp" class="cover" alt="" />
+                    <h3>Kubek</h3>
+                </a>
+                        <p class="description">Może być też czerwony</p>
+                        <p class="pricerange">30 zł</p>
+                        
+                    </div>
+                
+                <div class="card__button">
+                <button class="hide" name="book" title="Zarezerwuj ten prezent">Rezerwuj</button>
+                <button class="" name="release" title="Prezent wraca do puli">Zwolnij</button>
+                <button class="" name="archive" title="Zarchiwizuj prezent">Zdobyte!</button>
+                </div>
+                </div>
+            </article>
+            <article class="card card__unavailable" id="present1" data-user="Ewelina">     
+                <div class="card__inner" > 
+                <div class="top_right free_flag">Ewelina</div>    
+                <div class="card__content">        
+                <a href="generic.html">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQEBAQEBAQFRAVEBAVEBcQFRMWFRAVFRUWFhUVFRUYHSghGBslGxUWITEiJSkrLi4vFx8zOjMsNygtLi4BCgoKDg0OGxAQGy0lHyUtLS03LS0rLS8tLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLy0tLS0tLf/AABEIAL0BCwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAAAQIDBAUGB//EAEIQAAIBAgQCCAIIAwYGAwAAAAECAAMRBBIhMQVBEyIyUWFxgZEGUhQzQmJyc6GxI6LCNIKywdHhJGODktLwB0NT/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECAwT/xAAkEQEBAAICAgEEAwEAAAAAAAAAAQIREiEDMWEiMkFREzND4f/aAAwDAQACEQMRAD8A+wONZGW1BKoBCEIBCEcAhCEAhHGIABGBACSgAEGfukS0UBGEcICtCOECJEranLoQMhQjYkeUX0gjtpmHem/qvP09prKyt6Uml2jS6OoCUYG2/ePMbj1g+EB5AzNXwgYg2IYbMpKsPJhrEmKrU9wKqei1B/S38vrG/wBrqX0tHDlHZBU96Er+0r6SqhtmzfiH+Ym3B4+nV0VuuN0YFXHmp1t47S+pSB5Sal9FuU9sCY+3aUj8Os008ah+0PXT95FsMDKzg41fxU3GvMDqCD5SOWYm4cu9te9bg+41kegqr2K9QeD5ag/mGb+aXs6dDo48gnPGLrr2kpOO9C1M+itmH8wkhxZftpWT8SZh/wB1PMB62jZptMBKaGLp1Pq6iP35GBt522lwlRIiUS+V1BrAhCEIDhCEAjgI4BGBAQJgO8iTCEAhCOAoRwgKEcIChHCAoRkRQEVlbUpbCBz8Tg1ftKDbbvU94O4PlFSrVqWzdIvdUNmHk/P1HrOgRMPT5qppoubKP4rX0pkgFU8XIINuQIJ3UGWLMq14fH03NrlX+V9D6cj6Ga7icuthwRYgEeMhTZ6eim69za+x3Em7F1K6xIkTaZqWLU6Hqnx295olll9JZZ7QZBKnTwMvhKjmYrCo/bpK1tswBI8jykEw4toaw8q1X/ynVKxBB3SaXdWSNQaQvC8qKo4EQgEYikoBCF5CoxAJCliAbKuW7eAzEC/mRAK9ZUVnc2VQSx7gJRgekIZ6t1LWy09P4Si9gxG7m925DQC9rnmDEVsTUzLhx0FJ+oKtVV6Wsp1Y5A4yodB98E26ik3YzHYpAAuHwxdzlpr9Jqata9z/AANFAuSe4aXNgQ14uuxboaRtUIBdrA9ChuM1joWNiFB00JNwLHXTSwA1NgB1iSTbvJ1J8ZyKWIOEou+IVc1yzGk5qPiKmUljYotuqmg2VV3CrNFDjVEqpqN0LkC6Yj+G6nmNdGttdSQeRMDownLp8aWoStBGqHanbqhyCVZiT2aakWzkakEKGItLOGcRFQAO1IOxc01VtaiD7aqdSps1jsQA3OwDoQmTHcQSkUTtVqlxRpgjPUtuQOSjcsdB7CV1eLKKqUkVnJqdGxW2Sm1mYqWPaYBWJUXIA1tcAhvhK/pC5+jzdfLmIFyVXkWt2b8r72NtjLYGTF4sqQiLnrEXVb2AG2ao1jkW/OxJ1sDaZKlG7qlerUqVG16OiWp00UaFmCm5Xl12NzsOUlxXilPDE3W1RwuRm6tN2269XZQo1N+XZDHSQwWNoqp6NziKrm9RqC5+ka3Nh1EXkAzAAc+cCHFcBSo0atSjTSnWC/wmpjIWqnSkrEWzBnKjKdDe07JnAxHEbV6YrU6jEMbJQU1Fw3VvnrEau+UjqoGy5wdQQ831ON4dQT0yE3Ayp1nuxCquRbtckgWtuYGvEV0pqXqOqIO0zkKo5ak6CZV4xhz2ayP+Uek/wXlmDxNRmcPR6NVVCDnDG5zXVgBYMAATYsOtvKMRxmncU6LLVrOWCKhLKCO0ajrcIq3ubm+wFyQCGfG8bUkUaXTdIQCzDD4hugQ3Gcjo+0bEKDoSCdQpl2FxdGkgRExAUX3w+KJJJJZmJS7MSSSTqSSZrwWFFJSLlnY5qjneo5ABY+gAA5AADQTRApo1RUGYBrXt10dD/wBrgGD05bCBjelEjsmx07uU2EStqczcZVlsSpYkHfQy+0wPSkvpDC3lJ9U+V6rZJCYRxEDtggd41HqJpTEoQCHS3mJZnKlxpxyMc0hNFJGRgOEIQCZ8fTdlyUzlzEB2Bsaaa5iv3tLDuLX1tY6RCBClTWmqqoCoqgKBoFVRYAdwAExcK/i/8Uf/ALFHQfcoGxXyL6Of7oPYnQjgYsdw5azIWZrBXRlGXLUVyhZWuL2PRjYi4JHOacTTLo6B3QsjLnpkB0zAjMpIIzC9xcHWWRwMOH4VSp0WoKGCMhVyGIdgVyXzixBC2AtbKAALAARDhNNVRaeankbMChGYnIUJZnBzEqSLnXxm+YKuPLFloBWK3D1GNqNIg2YFh22Fj1V2tZiukDJjOGYejeu9V6ShCtRi9jUDEHrVWvUuSFGjAnKo2FpTw2jUrsKqL9HwoQJhQFAqGkbMWFMi1HOQvauwVRohJk8Nw8YhxVqFnpjstUGta/yJtTo+A1qWGYlR1+9Apw2GWmuVFsL3O5LE7szHVmPMm5MtjhAw4OkxqVKzqQ2ZqdIH7FJWtca/bZc99LjID2ZtJhCBiwvDlpu1TM7MTVy5rfwxUfpHC2A3OXe+iKOUXGKdR6WSklJyzAMK/YC6m9rG5uF8r31tY7oQPPYXgOHw1N6tdUqMcpe6LkFj1Ep0VAW4J0styzG24A6mAw7C9WoLVXAGXS1FB2aS2003J5m/IKBVRYYirnBvRpOypYgipWUlXbTcIQyD7wc26qmdGAoRxQFCOKARRxQERK2py2KBlelKhg0+UTeRAJJZL7WWw4xFASolIxwgEIQgOE5mM45SouUqLUDD7oII5EG+01YDGrWXOivl1sWsL23sL3meUt01cbJtqhMWN4ktJlVkq3Y2TKoIY6aDXfXnNFauqLnchVG+bl4eflLuJxq0RzDheIiqC1KnUZRcAnKoYj5bm/vaRwfF6VVigLLUBIyVBZrjcdxPheTlF41nxeLWoSHqFKAd0AS/S4t0uHRAvWyKQQQvWYqdlHXvo4M1AoqIKdFQBToDLbTbpcvVNtLIOqOZbTLPFPSw2et0IBa3SvTRMzbAZzcFuXfK8FxunWbJTWoTa50UAC9rklvGXlN6JjbNunCZcdjRRGZkqFdLlADYk2AIvf8ATnNCv1cxBXS5zWuvnY2jaaShOYvHKbP0dJalVv8AlgZRbc5mI08ZoqcQVATVVkNjYNl61uSkEgnwveTlF4VrhMXEuJph7dIr2JsCoUgnu3vFw7iaV79Gr2GhLAAA9295eU3o43W22E5eL47SpMUqLVDDXZTodiCGmqljQ9PpVp1CtrjRbsO8DNJyhws7aQLaCE5ND4io1GVEWqWY2AyjX9Zdi+LLSKipTqjMbL1VIJ8w1o54+9nDLetOhFMnEeIrQsaivlJsCoBF9Tbe/KVYXjCVQxppVYLbNYLz7gW125Rym9HG626EUw4Hi9GscqP1uQYEE+V9/SbzLLL6Syz2UDCEqFAwhAUkJGSECMYijEBwijEAgIQEDg/F2DzU1qgaobN+Fv8AQ29zKPg/F9uiT99P2YfsfeejrUg6sjdlgQfI6TwVB2w2IBO9N7N4jY+4P6zz+T6c5k9Pj+vC4vb1EDVk/wCWpb+8/VX9A/uJ5X4qxhesad+pTsAO9iLk/rb0nrMFqpf52zD8OgT+UA+pnjfiSgVxNS+zWZfEEf6gy+b7U8H3vZ8OohKNJByRfe2p97zynxXSyYgMNCyK2nzAkX/lE9bg6genTYbFEPuBPKfGFS9dR8tIX9Sx/a0vl1wTw7/kdPHYo1eHGoe0VTN4kVFUn3EwfBn1tT8v+oTbXwxThpQjrZFYjuvUDW9AZi+DPran5f8AUJm7547/AE3Nfx5a/b0+OH8M+af41nD+MsYVCUVNg12fxANgPK9/YTuY7sebUx7uo/znnPjSic1KpyKlT4EG4/c+035ftrn4dcptq+DKIFKo/Nny+igf5sZ2OI4bpaTJpc2K37wQR+onK+Dal6DrzFU+xC2/YzsYyt0aM/cPc7Ae8uGuCeTf8lcT40+qp/m/0mL4M+qqfmf0iP40+qp/m/0mV/CFBGpVCyKT0nMA/ZEx/q3/AIuf8Xf2n/pJ+7T0vCf7LR/KX9p5f4qphcRZQAOjTQC3Np6jhH9lo/kr+0YffV8n9eLx3w9/aaH4v6TPXYllxHS0VsTTNI3voHuTb0y/qZ5DgKBsRRBAILag6g9Uz1iYZcL9IqqAKZRWC32ZQ1wO4G6+5mfF9vwvm+75/wCs3xj9Qv5y/wCF5R8GHqVj95PTQy74vP8Aw6fnL/gec/4dwYq0cQpGpsF1OhsbfrLf7Un9TncPpGpiV6MH63NcfZUNe57tJ70zx3w7xV0qJSNujcgbAEE7G4GuvfPYzXh1pnz732UIQnZwKEIQFJCRkhAjGIoxAIxFGIBAQgIDnG4pwEV6oqZ8osocWvmt430009J2YSZYzLqtY5XG7gAmTiXDUxC5XBuOyw3X/bwmyEWb6qS2Xcc7huDq0E6PMjoL5C2ZSt+RsDcSrD8DHSmvWbpKha4AFkU8tOdrC068JOEa51GrTDqysLqwII7wd5w8JwKph6vSUKiEWIIqg6qeRK+Q1nfhFxl7THOzqM60nYqahXqm4VL2v3knfw0HrpaeKwy1UKOLqd/9QeRkMbjqdEKarhczhKY1LVHNyERRqzWBNgDse6aFNwDY7bHcecuk24mB4NUwzlqNVSjCzLVBF7bdZeY11tzm7GYNqyFXYKNwEuRmGoLE7gGxtYTdPPr8ZYMnCL0lQNizbChqGIDVdQM1il1XrA5msLa3trJMJJpq523bZxvhjYkKudVUNfskkm1u8RcF4W2GDL0isrG/ZIINrd58I+G/EGHxNfEYai7NWw5AxClKi9GTewzMoBvlOxO06ccJvac7x4/hwOKcAfEVDUNVV0AACE2A8c3jOjhcLUp0RSDoSq5VbKbW8Rff1m6IxMJLtbnbNPOYH4aalUSoKykqb2KHXl803cW4dVrrk6VFTmFQ9Y8rnNt4TqxGSePGTS3yZW7czjHDWxCKmdVUEN2SSSAR37ayPBeFNhsw6RWViCeqQQRfY38Z1YS8Jvac7x4/h5ir8MOKmenUUDNmXMDddbjbe09HTBsMxBbmQLD0Fzb3lkRjHCY+jLO5eyhCE0wUIQgKSEjJCBGOVrUkwYDhCEBwhCA4QhAcIQgOEU5ePq4tah6KmjUitlvYMr9HUN2u2ql+iGguLHe/VDqxzk1q+JAolaRL9FUNVR0eXpAgypmLXALm9xfRTe1xK6OIxgvnoggCn2Ml3IyCqdXsB2iuu172IGYPMfF9CqOM4Su5qLhk4djRQqJe1LElXzdYDqsUyW+bLbXUTJwzE8Rq1OAvxFXWi1PFHFgrlQ1rVBhziV2W69GQDYZidAdJ7ZHxgpVWK0zUGTo0Gmax/iAm9hcba6HUnWwXS4voqZyL03SstQDLlyqGAbVtFZlVtLsA9rEiByf/AI2XEChiun6QUfp+J+girfMMNm6lr6hN8t+W2lp5nglYVuL4nidek60qJpYLhdMowYhmyNVVbXCWZjm2AqHunuKtfGgMVpKTmGjZB87NlIfVbKigmxvUuQALSa18YCM1MEDos2UJY9ajnyEvcmxraEDsra/2g8T8MV/o3EviHFVlqCnnovSCBj9IKCrpSsL1DqBYadbWfTKbXAPeAfK4nIpV8bmQPTXLcZzTK3sQ50DE6g5F8SL3sbCdSpi7Ucqpc06vTFst0fTouqGta5OaxOgNoHVhODQxOPIu9FVNzYDIdwroGPSaKA5psw1zUSwFmEtrVsXlbLTu2bYimBbMB1DnNxlubsAfD7IDsxQGwhAIjHFAYgYpKBGBjiMBRGOBgRkhFGIGSpSZdQCy+HaHpz9PaRpVwdjfl5HuPcZbhsSGAIIIIuCNiJKvhEqa6h+TIbN/uPA3EimtSTBmB1q0u0M6fNTHWH4qfPzW/kJZQxIYXUgjwjZY2wlS1JYDKhiOKOBFqgG5A7O5+Y2X3OkOkG1xfrc/lNm9jpKsRhs5BvawYeZIIB9Ln3kUwpBU5zdQoGgsbA3vzuSxO/d3Sdr0up11bZhuQNdyNbe2sktVTazA32sd9M37ayhcKbKGa5FzcCxubHNudb6ydHD5cp3Ipql7b25x2dJmuuozLpvqNP8A28DXXQZhc7a77nT2PtKGwZJY5t727Wl2U/N93laWik2ZTmBAW1rHfmblt9t78++O16SXEKbWZTe9rHe1r29xGldTazKbmwsRqbXt7An0lYw5BQhuzmvvrmIPI+HO8qGBsAAxuMpBIJsVUqNztc3t598dnTSay/Mu9txvfLb3NvOD1lXdlGttTzlAwQsFvcX5i9+uHN/a3rGmHK6q+vW1YX0OXTcajKNY7NRf0q3AuLk2Gu5tmt7ayIrKSBmW5tbUa3Fx+kzvgO5iOoqjTYi128yFAlpw+tgRkzK1ra3WxABvtdRyjs6WmoNri97b87Xt521iNVQAcwsezrvfulOIwuYlgxBygDS9mBureY2kqtC4UKcuXY2NwALaWI/W48I7TpPpBtcX8/G37gj0iNddesuhsddje1veVDCkXysNXz6i+t79+1rD0jGF3BY2L5tMwI62a3a035WjtelhrLp1l121Gul/2IMnaZzhbEFTYBrga7ZVW2hHyzRES6EamRgJUWWkZOK0CEUmRFaBGMCFoxA5NfhzUSXoC6E3ekP1an3H7uxl+FxQYAg6ft4HuM6DzHiMGCc6aPz7n8/Hxmda9N75e2pHvKMRgUc5tVf5k0J8+Tet5RSqkaHQ87zZTqXl6sZ7lYWSpT7QzL8yDX1Xcel/SWUq4IuDN0rfCK2trN3rz8++TuL1UFqSwGZqlB08R3j/ADESVZZlKlmmuUYmhnttbKQd+bIf2UyS1JYDKkumZcMbgvla1TMCRrbo8o5b3A9r+EqOBJQKcoIJP2TfqkfL3nffxm+EnGNcqyPhWubEWLOSCTzRlBHuL+XvKnhfq7qt1za2XS4NrWUc/CaoRpOVYhhmA0CBgulibO4IZS2neviesfUXBEBhfYDojqCp3Zr+LTbCOMXlWOphD1gpAVraXOmVVC29Rr4ASzE0C2azWuhXlqdd7g6a8pohGk3WU4c5ibL2nObXMQ17KdNhcDf7I9IJhG0uRpTZE1OmqlT5gjf7oM2wAjS8qyfQtb3sQgAItfN17m9r/avvrziOEJBGRBouinRiCDc3XlbmDe+s2wJjjE5Vno0crZsqZilMG2moJzctrEW8uUqo4UoEtYkEZ9gOyRpZdd+ep75rhGjYhCKVBCEIE6Z5ScoBl4MBERWjhAjaMCO0YgQIkZZaRZYFVWkG335GZSCh1275svB1BFjtM2fmLv8AFV0qt5qp7TjVGNJgG7JNkbkT3HuP7zoYatpLLss01yqph1blY+EsBjiyX2S6Y69HLttbWUpVm8mY8Tgw2qko3eNj5rzk+qfK9VYtSTBnIq4h6P1y2X/9EuU/vc19Zso4gMAVIIOxBuD6yzKVLjY2Qla1JMGVEoRQAgOAEYWMmArQJihAIoQgEIoQCEIQCKEIBJ025SEAYF0IAwgEcUcBQhCBB15yMtlTDWAqiBgVYAqRYg6gicx0bD7ktR+Y6tS/H3r97cc++dSOSxZVVGvNQa84uJToGp5OxUfLk5IbFrr3DTs7d1ue2lUMSljUTFEDeEqHOXieCrcvQY0XOpy603/FT29RadSElkqzKz04LY6pRNsTTyjlUp3akfPmvrOjRrhgCpBB2INwfWbSL6HbnfnONjOECmHq4dzSYAsyqL03t3odvMSdz5a+nL4dZG75aGnnuB8VbEISygFTY2Oh8QOU6yvLLLNxnLG43VarxStWkpUO8IoQCEIQCEIoDihCAQhFAIQhAspnlJykGXQCOKOB/9k=" class="cover" alt="" />
+                    <h3>Voucher na paznokcie</h3>
+                </a>
+                    
+                        <p class="description"></p>
+                        <p class="pricerange">100 zł</p>
+                        <p class="smaller_font">Zarchiwizowane 10.12.2025</p>
+                    </div>
+                
+                
+                </div>
+            </article>
+        </section>
+        <section class="card__wrapper" id="available_presents_section">
+            <div class="card__block_title sticky_top"><h2>Prezenty, o które prosili Twoi znajomi</h2>       
+                <div class="filter_buttons">
+                <button class="chosen_user" data-user="Ewelina">Ewelina</button>
+                <button class="chosen_user" data-user="Mama Y">Mama Y</button>
+                <button class="chosen_user" data-user="Damian">Damian</button>
+            </div></div>
+     
+            <article class="card" id="present10" data-user="Ewelina">     
+                <div class="card__inner" > 
+                <div class="top_right free_flag">Ewelina</div>           
+                
+                    <div class="card__content">
+                        <a href="generic.html">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQfR1K77TE2BCOENmYD3T_Y5FJ-ZALRCGTMP_fUsbjpnw9LbIdGW_ghq2UbFqRAx94-mHRnwbHNR3l6V0n_FVADCu39eSZOm5Wzesh1kGpSmhly80YCAwy6YK-WpKKIsWQHDf7Elg&usqp=CAc" class="cover" alt="" />
+                    <h3>Miska z motywem kota</h3>
+                </a>
+                        <p class="description">Super miseczka, czekam na promocję!</p>
+                        <p class="pricerange">20 zł</p>
+                        <p class="taken hide"></p>
+                    </div>
+                
+                <div class="card__button">
+                <button class="" name="book" title="Zarezerwuj ten prezent">Rezerwuj</button>
+                <button class="hide" name="release" title="Prezent wraca do puli">Zwolnij</button>
+                <button class="hide" name="archive" title="Zarchiwizuj prezent">Zdobyte!</button>
+                </div>
+                </div>
+            </article>
+          <article class="card" id="present11" data-user="Mama Y">     
+                <div class="card__inner" > 
+                <div class="top_right free_flag">Mama Y</div>           
+                
+                    <div class="card__content">
+                        <a href="generic.html">
+                    <img src="https://static.sinsay.com/media/catalog/product/8/8/884FU-03X-050-1-1018990.jpg?impolicy=product" class="cover" alt="" />
+                    <h3>Poduszka</h3>
+                </a>
+                        <p class="description"></p>
+                        <p class="pricerange">26 zł</p>
+                        <p class="taken hide"></p>
+                    </div>
+                
+                <div class="card__button">
+                <button class="" name="book" title="Zarezerwuj ten prezent">Rezerwuj</button>
+                <button class="hide" name="release" title="Prezent wraca do puli">Zwolnij</button>
+                <button class="hide" name="archive" title="Zarchiwizuj prezent">Zdobyte!</button>
+                </div>
+                </div>
+            </article>
+            <article class="card " id="present111" data-user="Damian">     
+                <div class="card__inner" > 
+                <div class="top_right free_flag">Damian</div>    
+                <div class="card__content">    
+                <a href="https://www.kapitan.pl/produkt/bokserki-meskie-wyjmuj-bydlaka-biala-guma/">
+                    <img src="https://www.kapitan.pl/wp-content/uploads/2025/10/szablon-bokserek-017-wyjmuj-bydlaka3.png" class="cover" alt="" />
+                    <h3>Bokserki</h3>
+                </a>
+                    
+                        <p class="description">Te gacie idealnie nadadzą się na prezent dla chłopa.</p>
+                        <p class="pricerange">69 zł</p>
+                        <p class="taken hide"></p>
+                    </div>
+                
+                <div class="card__button">
+                <button class="" name="book" title="Zarezerwuj ten prezent">Rezerwuj</button>
+                <button class="hide" name="release" title="Prezent wraca do puli">Zwolnij</button>
+                <button class="hide" name="archive" title="Zarchiwizuj prezent">Zdobyte!</button>
+                </div>
+                </div>
+            </article>
+            <article class="card card__unavailable" id="present7" data-user="Ewelina">     
+                <div class="card__inner" > 
+                <div class="top_right free_flag">Ewelina</div>    
+                <div class="card__content">        
+                <a href="generic.html">
+                    <img src="prezent1.jpg" class="cover" alt="" />
+                    <h3>Krem awokado</h3>
+                </a>
+                    
+                        <p class="description">Może być opakowanie 14 albo 28 ml :-)</p>
+                        <p class="pricerange">100 - 200 zł</p>
+                        <p class="taken">Damian</p>
+                    </div>
+                
+                
+                </div>
+            </article>
+        </section>
+         <section class="card__wrapper" id="my_wishlist_section">
+            <div class="card__block_title sticky_top"><h2>Twoje życzenia prezentowe</h2></div>
+            
+           <article class="card" id="present2">     
+                <div class="card__inner"> 
+                <!--<div class="top_right taken_flag"></div>  -->  
+                
+                    <div class="card__content">          
+                <a href="https://aniakruk.pl/piercing/sruks1890-kolczyki-koleczka-8-5-mm-srebrne">
+                    <img src="https://aniakruk.pl/img/imagecache/6001-7000/9c0a777889f2127763a1e93555749c2df99b7730.webp" class="cover" alt="" />
+                    <h3>Kolczyki kółeczka</h3>
+                </a>
+                    
+                        <p class="description">Ma być przecena</p>
+                        <p class="pricerange">99 zł</p>
+                        <p class="taken hide"></p>
+                    </div>
+                <div class="card__button">
+                <button class="" name="edit" title="Edytuj sczegóły prezentu">Edytuj</button>
+                <button class="" name="remove" title="Usuń prezent z listy życzeń">Usuń</button>
+                
+                </div>
+                
+                </div>
+            </article>
+            
+            <article class="card card__new">     
+                <div class="card__inner"> 
+                
+                <button>+</button>
+                </div>
+            </article>
+        </section>
+        <section class="form card__wrapper" id="add_new_present_section">  
+             <div class="card__block_title"><h2>Dodaj prezent do swojej listy życzeń</h2></div>
+            <article class="card">
+             <form action="#" method="post" class="card__inner">
+                
+                <label for="present_name">Nazwa prezentu:</label>
+                <input type="text" id="present_name" name="present_name" minlength="3"
+  maxlength="40" required />
+
+                <label for="present_description">Opis prezentu:</label>
+                <textarea id="present_description" name="present_description" maxlength="140" ></textarea>
+
+                <label for="present_price">Przedział cenowy:</label>
+                <select name="cars" id="cars"id="present_price" name="present_price" required >
+  <option disabled selected value> -- Wybierz opcję -- </option>
+  <option value="unknown">nieznany</option>
+  <option value="cheap">0 - 50 zł</option>
+  <option value="medium">50 - 100 zł</option>
+  <option value="expensive">100 zł &gt;</option>
+
+</select>
+               
+
+                <label for="present_link">Link do prezentu:</label>
+                <input type="url" id="present_link" name="present_link" />
+                <label for="image_link">Link do zdjęcia:</label>
+                <input type="url" id="image_link" name="image_link" />
+<div class="card__button"> <button type="submit">Dodaj prezent</button>
+                <button type="button">Anuluj</button></div>
+               
+                </form>
+            </article>
+        </section>
+    </div>
+    <div id="footer">
+        <footer class="max_width">
+            <p>Prezentownik &copy; 2025 Wszelkie prawa zastrzeżone.</p>
+        </footer>
+</div>
+    <script src="static/script.js"></script>
+    </body>
+</html>

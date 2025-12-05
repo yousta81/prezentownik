@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Dodaj prezent{% endblock %}
+
+{% block content %}
+ <div id="header">
+        <header class="max_width">
+            <h1>Dodaj życzenie</h1>
+            <p>Zbliżają się Święta albo inne wydarzenia i trzeba ogarnąć listę prezentów? Nie ma sprawy :-)</p>
+        </header>
+        </div>
+   <div id="main" class="max_width">
+<section class="form card__wrapper" id="add_new_present_section">  
+             <div class="card__block_title"><h2>Dodaj prezent do swojej listy życzeń</h2></div>
+            <article class="card">
+             <form action="" method="post" class="card__inner" id="giftForm">
+                
+                <label for="present_name">Nazwa prezentu:</label>
+                <input type="text" id="present_name" name="name" minlength="3"
+  maxlength="40" required />
+
+                <label for="present_description">Opis prezentu:</label>
+                <textarea id="present_description" name="description" maxlength="140" ></textarea>
+
+                <label for="present_price">Przedział cenowy:</label>
+                <select id="present_price" name="est_price" required >
+  <option disabled selected value> -- Wybierz opcję -- </option>
+  <option value="unknown">nieznany</option>
+  <option value="cheap">0 - 50 zł</option>
+  <option value="medium">50 - 100 zł</option>
+  <option value="expensive">100 zł &gt;</option>
+
+</select>
+               
+
+                <label for="present_link">Link do prezentu:</label>
+                <input type="url" id="present_link" name="product_url" />
+                <label for="image_link">Link do zdjęcia:</label>
+                <input type="url" id="image_link" name="image_url" />
+<div class="card__button"> <button type="submit">Dodaj prezent</button>
+                <button type="button" id="cancelBtn">Anuluj</button></div>
+               
+                </form>
+            </article>
+        </section>
+        </div>
+ 
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', path='/gift.js') }}"></script>
+{% endblock %}

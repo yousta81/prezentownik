@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+ <div id="header">
+        <header class="max_width"><img src="./static/logo.png" alt="Prezentownik Logo" id="logo">
+            <h1>Witaj w Prezentowniku, {{ user.name }}! </h1>
+            <p>Zbliżają się Święta albo inne wydarzenia i trzeba ogarnąć listę prezentów? Nie ma sprawy :-)</p>
+        
+        <button class="logout" name="logout" title="Wyloguj z Prezentownika" onclick="location.href='/logout'">Wyloguj</button>
+        </header>
+        </div>
+   <div id="main" class="max_width">
+    <div id="overlay" class="hide">
+  <div id="overlay_text">Produkt zarezrwowany</div></div>
+        <section class="card__wrapper" id="reserved_presents_section">
+            <div class="card__block_title sticky_top"><h2 class="text_center">Prezenty zarezerwowane przez Ciebie <span id="items_counter"></span></h2>
+            
+            </div>
+       
+            
+                {% for item in items if item.is_reserved_by_user %}
+                
+        <article class="card" id="{{ item.id }}" data-user="{{ item.owner }}" data-gift-id="{{ item.id }}">     
+                <div class="card__inner" > 
+                <div class="top_right vertical_flag">{{ item.owner }}</div>           
+                
+                    <div class="card__content">
+                        <a href="{{ item.product_url }}" target="_blank">
+                            
+                    <img src="{{ item.image_url }}" class="contain" alt="" />
+                    <h3>{{ item.name }}</h3>
+                </a>
+                        <p class="description">{{ item.description }}</p>
+                        <p class="pricerange">{{ item.est_price }}</p>
+                        
+                    </div>
+                
+                <div class="card__button">
+                <button class="hide" name="book" title="Zarezerwuj ten prezent">Rezerwuj</button>
+                <button class="" name="release" title="Prezent wraca do puli">Zwolnij</button>
+                <form action="/gifts/{{ item.id }}/delete" method="post" onsubmit="return confirm('Na pewno usunąć?')">
+    <button type="submit">Kupione</button>
+</form>
+                </div>
+                </div>
+            </article>
+           {% endfor %}
+        
+            <p class="no_items hide">Brak elementów</p>
+                 
+</section>
+
+        <section class="card__wrapper" id="available_presents_section">
+            <div class="card__block_title sticky_top"><h2>Prezenty, o które prosili Twoi znajomi</h2>       
+                <div class="filter_buttons">
+                    {% for owner in owners if owner != user.name %}
+                    <button class="chosen_user horizontal_flag" data-user="{{ owner }}">{{ owner }}</button>
+
+                {% endfor %}
+            
+            </div></div>
+       
+            
+                {% for item in items if item.owner and item.owner != user.name and not item.is_reserved_by_user %}
+                 
+        <article class="card {% if item.is_reserved %}card__unavailable{% endif %}" id="{{ item.id }}" data-user="{{ item.owner }}" data-gift-id="{{ item.id }}">     
+                <div class="card__inner" > 
+                <div class="top_right vertical_flag">{{ item.owner }}</div>           
+                
+                    <div class="card__content">
+                        <a href="{{ item.product_url }}" target="_blank">
+                            
+                    <img src="{{ item.image_url }}" class="contain" alt="" />
+                    <h3>{{ item.name }}</h3>
+                </a>
+                        <p class="description">{{ item.description }}</p>
+                        <p class="pricerange">{{ item.est_price }}</p>
+                        {% if item.is_reserved %}<p class="taken">{{ item.reserved_by }}</p>{% endif %}
+                    </div>
+                
+                <div class="card__button">
+                    {% if not item.is_reserved %} 
+                <button class="" name="book" title="Zarezerwuj ten prezent">Rezerwuj</button>
+                <button class="hide" name="release" title="Prezent wraca do puli">Zwolnij</button>
+                <form action="/gifts/{{ item.id }}/delete" method="post" onsubmit="FadeInOut('alert')">
+    <button class="hide" type="submit">Kupione</button>
+</form>
+                {% endif %}
+                </div>
+                </div>
+            </article>
+    
+        {% endfor %}   
+        <p class="no_items hide">Brak elementów</p>
+        
+</section>
+      <section class="card__wrapper" id="my_wishlist_section">
+            <div class="card__block_title sticky_top"><h2>Twoje życzenia prezentowe</h2></div>
+            <article class="card card__new">     
+                <div class="card__inner"> 
+                
+                <button id="addWish">+</button>
+                </div>
+            </article>
+           {% for item in items %}
+                {% if item.owner == user.name %}
+            
+        <article class="card {% if item.is_reserved %}card__unavailable{% endif %}" id="{{ item.id }}" data-user="{{ item.owner }}" data-gift-id="{{ item.id }}">     
+                <div class="card__inner" > 
+                <div class="top_right vertical_flag">{{ item.owner }}</div>           
+                
+                    <div class="card__content">
+                        <a href="{{ item.product_url }}" target="_blank">
+                            
+                    <img src="{{ item.image_url }}" class="contain" alt="" />
+                    <h3>{{ item.name }}</h3>
+                </a>
+                        <p class="description">{{ item.description }}</p>
+                        <p class="pricerange">{{ item.est_price }}</p>
+                        {% if item.is_reserved %}<p class="taken">{{ item.reserved_by }}</p>{% endif %}
+                    </div>
+                
+                <div class="card__button">
+                {% if not item.is_reserved %} 
+                <button class="" name="edit" onclick="location.href='/gifts/{{ item.id }}/edit'" title="Edytuj szczegóły prezentu">Edytuj</button>
+                <form action="/gifts/{{ item.id }}/delete" method="post" onsubmit="return confirm('Na pewno usunąć?')">
+    <button type="submit">Usuń</button>
+</form>
+{% endif %}                
+</div>
+                </div>
+            </article>
+                {% endif %}
+            {% endfor %}
+            
+        </section>
+
+</div>
+ 
+{% endblock %}
