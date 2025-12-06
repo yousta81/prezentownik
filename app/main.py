@@ -5,12 +5,13 @@ from fastapi.security import OAuth2PasswordBearer
 from fastapi.responses import RedirectResponse, HTMLResponse, Response
 from datetime import datetime
 from sqlalchemy.orm import Session
-from app.database import Base, engine, SessionLocal
-from app.models import User, Gift, Reservation, Friendship
-from app.auth import verify_password, SECRET_KEY, ALGORITHM
+from database import Base, engine, SessionLocal
+from models import User, Gift, Reservation, Friendship
+from auth import verify_password, SECRET_KEY, ALGORITHM
 from jose import JWTError, jwt
 import os
 from fastapi.staticfiles import StaticFiles
+from config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 
 
 app = FastAPI()
