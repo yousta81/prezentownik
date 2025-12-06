@@ -12,3 +12,7 @@ if ENV == "local":
     DATABASE_URL = os.getenv("SQLITE_URL")
 else:
     DATABASE_URL = os.getenv("POSTGRES_URL")
+
+SQLITE_URL = os.getenv("SQLITE_URL")
+POSTGRES_URL = os.getenv("POSTGRES_URL")
+DATABASE_URL = POSTGRES_URL
