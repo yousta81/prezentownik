@@ -147,6 +147,7 @@ article.card {
   display: flex;
     padding: var(--padding);
     flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .vertical_flag{
@@ -475,7 +476,9 @@ label:has(+ input:required):after, label:has(+ select:required):after, label:has
         --padding: 16px;
     }
 
-    article.card {
+    #reserved_presents_section article.card, 
+    #available_presents_section article.card,
+    #my_wishlist_section article.card {
         flex: 0 0 50%;
         max-width: 50%;
     }
@@ -496,14 +499,18 @@ section.form .card{
 
 @media (width >= 55rem) { 
 
-    article.card {
+  #reserved_presents_section article.card, 
+    #available_presents_section article.card,
+    #my_wishlist_section article.card {
         flex: 0 0 33%;
         max-width: 33%
     }
   }
 
 @media (width >= 80rem) { 
-    article.card {
+    #reserved_presents_section article.card, 
+    #available_presents_section article.card,
+    #my_wishlist_section article.card {
         flex: 0 0 25%;
         max-width: 25%
     }
