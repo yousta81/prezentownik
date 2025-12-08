@@ -4,6 +4,7 @@
 
 {% block content %}
  <div id="header">
+    
         <header class="max_width"><img src="./static/logo.png" alt="Prezentownik Logo" id="logo">
             <h1>Witaj w Prezentowniku, {{ user.name }}! </h1>
             <p>Zbliżają się Święta albo inne wydarzenia i trzeba ogarnąć listę prezentów? Nie ma sprawy :-)</p>
@@ -12,8 +13,17 @@
         </header>
         </div>
    <div id="main" class="max_width">
+    <nav class="max_width mobile_menu hide" id="mobile_menu">
+    
+    <ul>
+  <li><a href="#reserved_presents_section" data-name="reserved_presents_section">Zarezerwowane</a></li>
+  <li><a href="#available_presents_section" data-name="available_presents_section">Wolne</a></li>
+  <li><a href="#my_wishlist_section" data-name="my_wishlist_section">Twoje</a></li>
+  </ul>
+    </nav>
+    
     <div id="overlay" class="hide">
-  <div id="overlay_text">Produkt zarezrwowany</div></div>
+  <div id="overlay_text">Produkt zarezerwowany</div></div>
         <section class="card__wrapper" id="reserved_presents_section">
             <div class="card__block_title sticky_top"><h2 class="text_center">Prezenty zarezerwowane przez Ciebie <span id="items_counter"></span></h2>
             
@@ -53,7 +63,7 @@
 </section>
 
         <section class="card__wrapper" id="available_presents_section">
-            <div class="card__block_title sticky_top"><h2>Prezenty, o które prosili Twoi znajomi</h2>       
+            <div class="card__block_title sticky_top"><h2 class="text_center">Prezenty, o które prosili Twoi znajomi</h2>       
                 <div class="filter_buttons">
                     {% for owner in owners if owner != user.name %}
                     <button class="chosen_user horizontal_flag" data-user="{{ owner }}">{{ owner }}</button>
@@ -97,7 +107,7 @@
         
 </section>
       <section class="card__wrapper" id="my_wishlist_section">
-            <div class="card__block_title sticky_top"><h2>Twoje życzenia prezentowe</h2></div>
+            <div class="card__block_title sticky_top"><h2 class="text_center">Twoje życzenia prezentowe</h2></div>
             <article class="card card__new">     
                 <div class="card__inner"> 
                 

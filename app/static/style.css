@@ -10,8 +10,8 @@
     --lighter-blue: #A6FFDC;
     --medium-color: #E74F84;
     --darker-color: #D71D5E;
-    --padding: 14px;
-    --fontsize: 14px;
+    --padding: 12px;
+    --fontsize: 12px;
     --font: "Parkinsans", sans-serif;
     --font-decorative: 'Delicious Handrawn', cursive;
     --max-width: 1200px;
@@ -33,10 +33,26 @@ body {
     color: var(--primary-color);
 }
 
+header {    padding: calc(1.6*var(--padding));}
+
+.mobile_menu {    
+
+    background-color: var(--medium-color);
+    color: white;
+    text-align: center;
+    padding: calc(0.5*var(--padding));
+    font-size: 1em;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 1000;
+}
+
 .max_width {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: calc(2*var(--padding));
+
 }
 
 #header{
@@ -146,8 +162,8 @@ section.card__wrapper {
 article.card {
   display: flex;
     padding: var(--padding);
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 
 .vertical_flag{
@@ -311,19 +327,30 @@ h1, h2, h3 {
 }
 
 h1 {  
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: var(--padding);
 }
 
 h2 {
-  font-size: 2.2em;
+  font-size: 1.8em;
   margin: calc(0.5*var(--padding));
-  text-align: center;
 }
 
 h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+#mobile_menu ul {
+  display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 span#items_counter {
@@ -353,8 +380,9 @@ margin-bottom: 20px;
 }
 
 img#logo {
-  height: 100px;
+  height: 5em;
   margin-right: calc(2*var(--padding));
+  margin-bottom: var(--padding);
   vertical-align: middle;
   filter: drop-shadow(4px 4px 0px var(--darker-color));
 }
@@ -471,10 +499,7 @@ label:has(+ input:required):after, label:has(+ select:required):after, label:has
 
 
 @media (width >= 36rem) { 
-    :root {
-        --fontsize: 16px;
-        --padding: 16px;
-    }
+
 
     #reserved_presents_section article.card, 
     #available_presents_section article.card,
@@ -498,21 +523,29 @@ section.form .card{
 }
 
 @media (width >= 55rem) { 
+    :root {
+        --fontsize: 14px;
+        --padding: 14px;
+    }
 
   #reserved_presents_section article.card, 
     #available_presents_section article.card,
     #my_wishlist_section article.card {
         flex: 0 0 33%;
         max-width: 33%
-    }
+ 
   }
-
-@media (width >= 80rem) { 
+}
+@media (width >= 70rem) { 
     #reserved_presents_section article.card, 
     #available_presents_section article.card,
     #my_wishlist_section article.card {
         flex: 0 0 25%;
         max-width: 25%
+    }
+    
+    .mobile_menu {
+        display: none;
     }
  }
 

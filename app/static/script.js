@@ -98,3 +98,26 @@ document.getElementById("addWish").addEventListener("click", () => {
     window.location.href = "/gifts";
 });
 
+// additional menu for scrolling on mobile devices
+function update() {
+  const menu = document.getElementById("mobile_menu");
+  const elem = document.getElementById("reserved_presents_section");
+  const rect = elem.getBoundingClientRect();
+  const isSticky = document.querySelectorAll(".sticky_top");
+
+      if (rect.top < 10) { 
+        menu.classList.remove("hide");
+        isSticky.forEach(item => {
+          item.style.top = menu.offsetHeight + "px";
+    })
+      }  
+      else {
+      menu.classList.add("hide");
+      isSticky.forEach(item => {
+          item.style.top = "0px";
+    })
+      }    
+}
+
+document.addEventListener("scroll", update);
+update();
