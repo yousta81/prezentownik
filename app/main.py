@@ -288,7 +288,7 @@ def delete_gift(
     ).first()
 
     if not gift:
-        raise HTTPException(404, "Gift not found")
+        return RedirectResponse(url="/#my_wishlist_section", status_code=303)
 
     gift.archived_at = datetime.now()
     db.commit()
