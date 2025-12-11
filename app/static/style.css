@@ -458,20 +458,7 @@ label:has(+ input:required):after, label:has(+ select:required):after, label:has
     background-color: var(--blue-color);
     -ms-transform: translate(-50%,-50%);
     padding: var(--padding);
-
 }
-
-.foAnimated {
-            background-image: url(/html/images/test.png);
-            background-repeat: no-repeat;
-            background-position: left top;
-            padding-top: 95px;
-            margin-bottom: 60px;
-            -webkit-animation-duration: 3s;
-            animation-duration: 3s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-        }
 
         @-webkit-keyframes fadeOut {
             0% {
